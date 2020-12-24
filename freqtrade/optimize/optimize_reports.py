@@ -9,7 +9,8 @@ from pandas import DataFrame
 from tabulate import tabulate
 
 from freqtrade.constants import DATETIME_PRINT_FORMAT, LAST_BT_RESULT_FN
-from freqtrade.data.btanalysis import calculate_market_change, calculate_max_drawdown, calculate_csum
+from freqtrade.data.btanalysis import calculate_market_change, calculate_max_drawdown, \
+    calculate_csum
 from freqtrade.misc import file_dump_json
 
 
