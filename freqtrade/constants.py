@@ -45,6 +45,16 @@ USERPATH_NOTEBOOKS = 'notebooks'
 
 TELEGRAM_SETTING_OPTIONS = ['on', 'off', 'silent']
 
+
+# Define decimals per coin for outputs
+# Only used for outputs.
+DECIMAL_PER_COIN_FALLBACK = 3  # Should be low to avoid listing all possible FIAT's
+DECIMALS_PER_COIN = {
+    'BTC': 8,
+    'ETH': 5,
+}
+
+
 # Soure files with destination directories within user-directory
 USER_DATA_FILES = {
     'sample_strategy.py': USERPATH_STRATEGIES,
@@ -116,6 +126,7 @@ CONF_SCHEMA = {
         'trailing_stop_positive': {'type': 'number', 'minimum': 0, 'maximum': 1},
         'trailing_stop_positive_offset': {'type': 'number', 'minimum': 0, 'maximum': 1},
         'trailing_only_offset_is_reached': {'type': 'boolean'},
+        'bot_name': {'type': 'string'},
         'unfilledtimeout': {
             'type': 'object',
             'properties': {
@@ -154,6 +165,7 @@ CONF_SCHEMA = {
                 'order_book_max': {'type': 'integer', 'minimum': 1, 'maximum': 50},
                 'use_sell_signal': {'type': 'boolean'},
                 'sell_profit_only': {'type': 'boolean'},
+                'sell_profit_offset': {'type': 'number', 'minimum': 0.0},
                 'ignore_roi_if_buy_signal': {'type': 'boolean'}
             }
         },
